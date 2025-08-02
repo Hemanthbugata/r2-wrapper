@@ -24,6 +24,22 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(express.json());
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK' });
+});
+
+// Get file info endpoint
+app.get('/file/:fileName', (req, res) => {
+  const fileName = req.params.fileName;
+  const fileUrl = `${process.env.R2_PUBLIC_URL}/${fileName}`;
+  
+  res.json({
+    fileName: fileName,
+    url: fileUrl
+  });
+});
+
 // Upload endpoint
 app.post('/upload', upload.single('file'), async (req, res) => {
   try {
@@ -54,11 +70,6 @@ app.post('/upload', upload.single('file'), async (req, res) => {
     console.error('Upload error:', error);
     res.status(500).json({ error: 'Upload failed' });
   }
-});
-
-// Health check endpoint
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK' });
 });
 
 app.listen(PORT, () => {
