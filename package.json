@@ -3,35 +3,42 @@
   "version": "1.0.0",
   "description": "Cloudflare R2 wrapper using AWS SDK",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.433.0",
-    "@aws-sdk/s3-request-presigner": "^3.433.0",
-    "next": "^14.0.0"
+    "@aws-sdk/client-s3": "^3.859.0",
+    "@aws-sdk/s3-request-presigner": "^3.859.0",
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@types/uuid": "^9.0.8",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.3.0",
     "typescript": "^5.0.0"
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-s3"
   },
   "keywords": [
     "cloudflare",
     "r2",
     "aws-sdk",
     "s3",
-    "storage"
+    "storage",
+    "nextjs"
   ],
   "author": "",
   "license": "MIT"
